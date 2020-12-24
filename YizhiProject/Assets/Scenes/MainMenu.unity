@@ -392,7 +392,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219474472}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &219474474
 Camera:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.3322754, y: 3.8872986}
+  m_AnchoredPosition: {x: 2.3322754, y: 3.887329}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586035498
