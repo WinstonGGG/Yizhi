@@ -1190,6 +1190,7 @@ MonoBehaviour:
   question1: Q1
   question2: Q2
   question3: Q3
+  question4: Q4
 --- !u!1 &2010878439
 GameObject:
   m_ObjectHideFlags: 0
