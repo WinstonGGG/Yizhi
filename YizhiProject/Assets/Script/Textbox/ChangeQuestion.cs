@@ -15,16 +15,16 @@ public class ChangeQuestion : MonoBehaviour
     public string question4;
     // first int shows current question number; second int shows the option: A=1, B=2, C=3
     private Dictionary<Tuple<int, int>, int> questionDictionary = new Dictionary<Tuple<int, int>, int>();
-    private string[] questions = new string[10];
+    private string[] sentences = new string[10];
 
     void Start()
     {
         go = GameObject.Find("GameObjectManager").GetComponent<GOManager>();go.textComponent.text = question0;
-        questions[0] = question0;
-        questions[1] = question1;
-        questions[2] = question2;
-        questions[3] = question3;
-        questions[4] = question4;
+        sentences[0] = question0;
+        sentences[1] = question1;
+        sentences[2] = question2;
+        sentences[3] = question3;
+        sentences[4] = question4;
         questionDictionary.Add(new Tuple<int, int>(0, 1), 1);
         questionDictionary.Add(new Tuple<int, int>(0, 2), 2);
         questionDictionary.Add(new Tuple<int, int>(0, 3), 3);
@@ -37,7 +37,7 @@ public class ChangeQuestion : MonoBehaviour
         int nextQuestionNum = 0;
         try {
             nextQuestionNum = questionDictionary[new Tuple<int, int>(currentQuestionNum, option)];
-            go.textComponent.text = questions[nextQuestionNum];
+            go.textComponent.text = sentences[nextQuestionNum];
             currentQuestionNum = nextQuestionNum;
         }
         catch(Exception e) {
