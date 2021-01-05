@@ -6,28 +6,33 @@ public class UIPanelTestClass : MonoBehaviour
 {
     public UIPanel uiPanel;
 
-    void Update()
+    /* void Update()
     {
-        if (Input.GetKeyDown("1"))
+        if (Input.GetKeyDown("A"))
         {
             uiPanel.ShowCharaA(false);
         }
-        if (Input.GetKeyDown("2"))
+
+        if (Input.GetKeyDown("B"))
         {
             uiPanel.ShowCharaB(false);
         }
-        if (Input.GetKeyDown("3"))
+
+        if (Input.GetKeyDown("C"))
         {
             uiPanel.ShowContentBg(false);
         }
-        if (Input.GetKeyDown("4"))
+
+        if (Input.GetKeyDown("D"))
         {
             uiPanel.ShowContentText(false);
         }
-        /* if (Input.GetKeyDown("5"))
+
+        if (Input.GetKeyDown("5"))
         {
             uiPanel.ShowContentText("abcde");
         }
-        */
+        
     }
+    */
 }
