@@ -7,11 +7,23 @@ public class UIPanel : MonoBehaviour
     public RawImage charaBImg;
     public UIPanel contentBg;
     public Text contentTxt;
+    public Canvas canvas;
+
+    public void ShowCanvas(bool value)
+    {
+        canvas.enabled = value;
+    }
 
     public void ShowCharaA(bool value)
     {
         charaAImg.enabled = value;
     }
+
+    public void ShowCharaB(bool value)
+    {
+        charaBImg.enabled = value;
+    }
+
     public void ShowContentBg(bool value)
     {
         contentBg.enabled = value;

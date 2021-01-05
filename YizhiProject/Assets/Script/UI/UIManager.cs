@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public List<string> contents;
+    // public List<string> contents;
+    public AVGdata data;
     public UIPanel panel;
     [SerializeField]
     private int curLine;
@@ -22,19 +23,21 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             Init();
-            LoadText(contents[curLine]);
+            // LoadText(data.contents[curLine].dialogText);
+            LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
             ShowUI();
         }
 
         if (Input.GetMouseButtonDown(0))
         {
             NextLine();
-            if (curLine >= contents.Count)
+            if (curLine >= data.contents.Count)
             {
-                curLine = contents.Count;
+                curLine = data.contents.Count;
                 Init(); // Close UI Panel when dialogue finished
             }
-            LoadText(contents[curLine]);
+            // LoadText(data.contents[curLine].dialogText);
+            LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
         }
     }
 
@@ -47,16 +50,20 @@ public class UIManager : MonoBehaviour
 
     void HideUI()
     {
-        panel.ShowCharaA(false);
-        panel.ShowContentBg(false);
-        panel.ShowContentText(false);
+        //panel.ShowCharaA(false);
+        //panel.ShowCharaB(false);
+        //panel.ShowContentBg(false);
+        //panel.ShowContentText(false);
+        panel.ShowCanvas(false);
     }
 
     void ShowUI()
     {
-        panel.ShowCharaA(true);
-        panel.ShowContentBg(true);
-        panel.ShowContentText(true);
+        //panel.ShowCharaA(true);
+        //panel.ShowCharaB(true);
+        //panel.ShowContentBg(true);
+        //panel.ShowContentText(true);
+        panel.ShowCanvas(true);
     }
 
     void NextLine()
@@ -67,5 +74,12 @@ public class UIManager : MonoBehaviour
     void LoadText(string value)
     {
         panel.SetContentText(value);
+    }
+
+    void LoadContent(string value, bool charaADisplay, bool charaBDisplay)
+    {
+        panel.SetContentText(value);
+        panel.ShowCharaA(charaADisplay);
+        panel.ShowCharaB(charaBDisplay);
     }
 }
