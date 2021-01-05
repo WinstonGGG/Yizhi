@@ -851,7 +851,6 @@ GameObject:
   m_Component:
   - component: {fileID: 835046829}
   - component: {fileID: 835046828}
-  - component: {fileID: 835046830}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -871,7 +870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e71ce96c4d14b65a9e7210b680fa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 835046830}
+  data: {fileID: 11400000, guid: f19896adf32bb46f486398b9dcf118ea, type: 2}
+  asset: {fileID: 11400000, guid: bf358c163484b4967a5926fd88d19142, type: 2}
   panel: {fileID: 2139939707}
   curLine: 0
 --- !u!4 &835046829
@@ -888,28 +888,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &835046830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835046827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a9a086361404d5da3bb7e2027bda6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contents:
-  - dialogText: 
-    charaADisplay: 0
-    charaBDisplay: 0
-  - dialogText: 
-    charaADisplay: 0
-    charaBDisplay: 0
-  - dialogText: 
-    charaADisplay: 0
-    charaBDisplay: 0
 --- !u!1 &935201220
 GameObject:
   m_ObjectHideFlags: 0

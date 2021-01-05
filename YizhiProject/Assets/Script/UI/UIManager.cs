@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     // public List<string> contents;
     public AVGdata data;
+    public AVGAssetConfig asset;
     public UIPanel panel;
     [SerializeField]
     private int curLine;
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviour
         {
             Init();
             // LoadText(data.contents[curLine].dialogText);
-            LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
+            LoadCharaTexture(asset.charaATex, asset.charaBTex);
             ShowUI();
         }
 
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         HideUI();
         curLine = 0;
         panel.SetContentText("");
+        LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
     }
 
     void HideUI()
@@ -81,5 +83,11 @@ public class UIManager : MonoBehaviour
         panel.SetContentText(value);
         panel.ShowCharaA(charaADisplay);
         panel.ShowCharaB(charaBDisplay);
+    }
+
+    void LoadCharaTexture(Texture charaATex, Texture charaBTex)
+    {
+        panel.ChangeCharaATex(charaATex);
+        panel.ChangeCharaATex(charaBTex);
     }
 }

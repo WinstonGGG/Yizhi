@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AVGdata : MonoBehaviour
+[CreateAssetMenu()]
+public class AVGdata : ScriptableObject
 {
     public List<DialogContent> contents;
 }

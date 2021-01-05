@@ -28,12 +28,24 @@ public class UIPanel : MonoBehaviour
     {
         contentBg.enabled = value;
     }
+
     public void ShowContentText(bool value)
     {
         contentTxt.enabled = value;
     }
+
     public void SetContentText(string value)
     {
         contentTxt.text = value;
+    }
+
+    public void ChangeCharaATex(Texture tex)
+    {
+        charaAImg.texture = tex;
+    }
+
+    public void ChangeCharaBTex(Texture tex)
+    {
+        charaBImg.texture = tex;
     }
 }
