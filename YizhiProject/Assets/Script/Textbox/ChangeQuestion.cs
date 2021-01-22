@@ -15,6 +15,7 @@ public class ChangeQuestion : MonoBehaviour
     public string question4;
     // first int shows current question number; second int shows the option: A=1, B=2, C=3
     private Dictionary<Tuple<int, int>, int> questionDictionary = new Dictionary<Tuple<int, int>, int>();
+    private Dictionary<int, int> answerDictionary = new Dictionary<int, int>();
     private string[] sentences = new string[10];
 
     void Start()
