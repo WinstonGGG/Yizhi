@@ -7,8 +7,8 @@ public class GOManager : MonoBehaviour
 {
     public GameObject textBackground;
     public ChangeQuestion questionTrigger;
-    public GameObject textGO;
-    public Text textComponent;
+    // public GameObject textGO;
+    // public Text textComponent;
     public GameObject buttonA, buttonB, buttonC;
 
     public UIManager manager;
@@ -17,8 +17,8 @@ public class GOManager : MonoBehaviour
     {
         textBackground = GameObject.Find("TextBackground");
         questionTrigger = textBackground.GetComponent<ChangeQuestion>();
-        textGO = GameObject.Find("Text");
-        textComponent = textGO.GetComponent<Text>();
+        // textGO = GameObject.Find("Text");
+        // textComponent = textGO.GetComponent<Text>();
         buttonA = GameObject.Find("ButtonA");
         buttonB = GameObject.Find("ButtonB");
         buttonC = GameObject.Find("ButtonC");

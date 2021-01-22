@@ -6,7 +6,6 @@ using System;
 
 public class ChangeQuestion : MonoBehaviour
 {
-    public int currentQuestionNum = 0;
     public GOManager go;
     // first int shows current question number; second int shows the option: A=1, B=2, C=3
     private Dictionary<Tuple<int, int>, int> questionDictionary = new Dictionary<Tuple<int, int>, int>();
@@ -17,7 +16,6 @@ public class ChangeQuestion : MonoBehaviour
     {
         go = GameObject.Find("GameObjectManager").GetComponent<GOManager>();
 
-        go.textComponent.text = "";
         questionDictionary.Add(new Tuple<int, int>(4, 1), 5);
         questionDictionary.Add(new Tuple<int, int>(4, 2), 6);
         answerDictionary.Add(5,7);
@@ -28,13 +26,17 @@ public class ChangeQuestion : MonoBehaviour
     public void ShowNextQuestion(int option) {
         int nextQuestionNum = 0;
         try {
-            nextQuestionNum = questionDictionary[new Tuple<int, int>(currentQuestionNum, option)];
+            nextQuestionNum = questionDictionary[new Tuple<int, int>(go.manager.GetCurLine(), option)];
             go.manager.LoadText(data.contents[nextQuestionNum].dialogText);
             go.manager.UpdateCurLine(nextQuestionNum);
         }
         catch(Exception e) {
             Debug.Log("Key Not Found");
         }
+
+        go.buttonA.SetActive(false);
+        go.buttonB.SetActive(false);
+        go.buttonC.SetActive(false);
     }
 
     public void ShowFromAnswer(int curLine) {

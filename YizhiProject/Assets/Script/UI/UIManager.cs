@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
         go = GameObject.Find("GameObjectManager").GetComponent<GOManager>();
 
         questionTrigger = go.questionTrigger;
-
         curSen = SentenceType.SENT;
         Init();
     }
@@ -39,9 +38,7 @@ public class UIManager : MonoBehaviour
             Init();
             LoadCharaTexture(asset.charaATex, asset.charaBTex);
             ShowUI();
-            go.buttonA.SetActive(false);
-            go.buttonB.SetActive(false);
-            go.buttonC.SetActive(false);
+            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -81,10 +78,12 @@ public class UIManager : MonoBehaviour
 
     private void Init()
     {
-        HideUI();
         curLine = 0;
-        panel.SetContentText("");
+        // LoadText(data.contents[0].dialogText);
         LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
+        go.buttonA.SetActive(false);
+        go.buttonB.SetActive(false);
+        go.buttonC.SetActive(false);
     }
 
     void HideUI()
@@ -125,5 +124,9 @@ public class UIManager : MonoBehaviour
 
     public void UpdateCurLine(int newLine) {
         curLine = newLine;
+    }
+
+    public int GetCurLine() {
+        return curLine;
     }
 }

@@ -825,11 +825,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBackground: {fileID: 1930555265}
   questionTrigger: {fileID: 0}
-  textGO: {fileID: 1695685593}
-  textComponent: {fileID: 0}
   buttonA: {fileID: 0}
   buttonB: {fileID: 0}
   buttonC: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!4 &825286953
 Transform:
   m_ObjectHideFlags: 0
@@ -878,10 +877,7 @@ MonoBehaviour:
   asset: {fileID: 11400000, guid: bf358c163484b4967a5926fd88d19142, type: 2}
   panel: {fileID: 2139939707}
   curLine: 0
-  senTypes: 00000000000000000000000000000000000000000100000002000000020000000000000000000000
-  m_A: {fileID: 0}
-  m_B: {fileID: 0}
-  m_C: {fileID: 0}
+  senTypes: 00000000000000000000000000000000010000000200000002000000000000000000000000000000
 --- !u!4 &835046829
 Transform:
   m_ObjectHideFlags: 0
