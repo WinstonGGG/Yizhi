@@ -9,6 +9,9 @@ public class GOManager : MonoBehaviour
     public ChangeQuestion questionTrigger;
     public GameObject textGO;
     public Text textComponent;
+    public GameObject buttonA, buttonB, buttonC;
+
+    public UIManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,10 @@ public class GOManager : MonoBehaviour
         questionTrigger = textBackground.GetComponent<ChangeQuestion>();
         textGO = GameObject.Find("Text");
         textComponent = textGO.GetComponent<Text>();
+        buttonA = GameObject.Find("ButtonA");
+        buttonB = GameObject.Find("ButtonB");
+        buttonC = GameObject.Find("ButtonC");
+        manager = GameObject.Find("GameManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame

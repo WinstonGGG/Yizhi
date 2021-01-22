@@ -5,20 +5,28 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GOManager go;
+    
     // public List<string> contents;
     public AVGdata data;
     public AVGAssetConfig asset;
     public UIPanel panel;
     [SerializeField]
     private int curLine;
-    enum sentenceType {SENT, QUES, ANS}; // will be used to keep track of different sentence types
-    sentenceType curSen;
-    public Button m_A, m_B, m_C;
+    public enum SentenceType {SENT, QUES, ANS}; // will be used to keep track of different sentence types
+    private SentenceType curSen;
+    public SentenceType[] senTypes;
+    private ChangeQuestion questionTrigger;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        // curSen = sentenceType.None;
+        go = GameObject.Find("GameObjectManager").GetComponent<GOManager>();
+
+        questionTrigger = go.questionTrigger;
+
+        curSen = SentenceType.SENT;
         Init();
     }
 
@@ -29,38 +37,44 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             Init();
-            // LoadText(data.contents[curLine].dialogText);
             LoadCharaTexture(asset.charaATex, asset.charaBTex);
             ShowUI();
-            m_A.gameObject.SetActive(false);
-            m_B.gameObject.SetActive(false);
-            m_C.gameObject.SetActive(false);
+            go.buttonA.SetActive(false);
+            go.buttonB.SetActive(false);
+            go.buttonC.SetActive(false);
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (curSen == sentenceType.SENT)
+            //Dealing with the sentence showing now
+            curSen = senTypes[curLine];
+            if (curSen == SentenceType.SENT)
             {
-                NextLine();
+                curLine++;
             }
-            else if (curSen == sentenceType.ANS)
+            else if (curSen == SentenceType.ANS)
             {
-                //answerDictionary;
+                questionTrigger.ShowFromAnswer(curLine);
             }
-            else if (curSen == sentenceType.QUES)
+            else if (curSen == SentenceType.QUES)
             {
-                m_A.gameObject.SetActive(true);
-                m_B.gameObject.SetActive(true);
-                m_C.gameObject.SetActive(true);
-                Debug.Log("you have to choose an option from A, B or C");
+                Debug.Log("Choose from A, B or C");
             }
 
+            //Dealing with sentence that will show after this click
             if (curLine >= data.contents.Count)
             {
                 curLine = data.contents.Count;
                 Init(); // Close UI Panel when dialogue finished
             }
-            // LoadText(data.contents[curLine].dialogText);
+            curSen = senTypes[curLine];
+            if (curSen == SentenceType.QUES)
+            {
+                go.buttonA.SetActive(true);
+                go.buttonB.SetActive(true);
+                go.buttonC.SetActive(true);
+            }
+            
             LoadContent(data.contents[curLine].dialogText, data.contents[curLine].charaADisplay, data.contents[curLine].charaBDisplay);
         }
     }
@@ -91,26 +105,25 @@ public class UIManager : MonoBehaviour
         panel.ShowCanvas(true);
     }
 
-    void NextLine()
-    {
-        curLine++;
-    }
-
-    void LoadText(string value)
+    public void LoadText(string value)
     {
         panel.SetContentText(value);
     }
 
-    void LoadContent(string value, bool charaADisplay, bool charaBDisplay)
+    public void LoadContent(string value, bool charaADisplay, bool charaBDisplay)
     {
         panel.SetContentText(value);
         panel.ShowCharaA(charaADisplay);
         panel.ShowCharaB(charaBDisplay);
     }
 
-    void LoadCharaTexture(Texture charaATex, Texture charaBTex)
+    public void LoadCharaTexture(Texture charaATex, Texture charaBTex)
     {
         panel.ChangeCharaATex(charaATex);
         panel.ChangeCharaATex(charaBTex);
+    }
+
+    public void UpdateCurLine(int newLine) {
+        curLine = newLine;
     }
 }
