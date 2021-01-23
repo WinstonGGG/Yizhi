@@ -23,7 +23,7 @@ public class ChangeQuestion : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void ShowNextQuestion(int option) {
+    public void ShowFromQuestion(int option) {
         int nextQuestionNum = 0;
         try {
             nextQuestionNum = questionDictionary[new Tuple<int, int>(go.manager.GetCurLine(), option)];

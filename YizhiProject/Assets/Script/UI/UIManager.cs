@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     
     // public List<string> contents;
     public AVGdata data;
-    public AVGAssetConfig asset;
     public UIPanel panel;
     [SerializeField]
     private int curLine;
@@ -36,7 +35,6 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             Init();
-            LoadCharaTexture(asset.charaATex, asset.charaBTex);
             ShowUI();
             
         }
@@ -114,12 +112,6 @@ public class UIManager : MonoBehaviour
         panel.SetContentText(value);
         panel.ShowCharaA(charaADisplay);
         panel.ShowCharaB(charaBDisplay);
-    }
-
-    public void LoadCharaTexture(Texture charaATex, Texture charaBTex)
-    {
-        panel.ChangeCharaATex(charaATex);
-        panel.ChangeCharaATex(charaBTex);
     }
 
     public void UpdateCurLine(int newLine) {
