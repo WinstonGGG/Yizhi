@@ -16,9 +16,9 @@ public class ChangeQuestion : MonoBehaviour
     {
         go = GameObject.Find("GameObjectManager").GetComponent<GOManager>();
 
-        questionDictionary.Add(new Tuple<int, int>(4, 1), 5);
+        questionDictionary.Add(new Tuple<int, int>(4, 1), 5); //此处4（选项行）指当前玩家处于第四行剧情，1指选A，5指跳到第5行
         questionDictionary.Add(new Tuple<int, int>(4, 2), 6);
-        answerDictionary.Add(5,7);
+        answerDictionary.Add(5,7); //当玩家处于第5（NPC/玩家根据不同选项说的话的那一行）行时，点击回跳到第七行
         answerDictionary.Add(6,7);
     }
 
