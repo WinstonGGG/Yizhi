@@ -874,10 +874,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   data: {fileID: 11400000, guid: f19896adf32bb46f486398b9dcf118ea, type: 2}
-  asset: {fileID: 11400000, guid: bf358c163484b4967a5926fd88d19142, type: 2}
   panel: {fileID: 2139939707}
   curLine: 0
-  senTypes: 00000000000000000000000000000000010000000200000002000000000000000000000000000000
+  senTypes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &835046829
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,7 +1373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e924857ea573647bebd126062d93a2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentQuestionNum: 0
   go: {fileID: 0}
   data: {fileID: 11400000, guid: f19896adf32bb46f486398b9dcf118ea, type: 2}
 --- !u!1 &2010878439
