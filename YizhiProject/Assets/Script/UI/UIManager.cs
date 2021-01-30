@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private int curLine;
     public enum SentenceType {SENT, QUES, ANS}; // will be used to keep track of different sentence types
     private SentenceType curSen;
-    public SentenceType[] senTypes;
+    public SentenceType[] senTypes; //The size for this should be the total number of dialogs of this story
     private ChangeQuestion questionTrigger;
 
 
