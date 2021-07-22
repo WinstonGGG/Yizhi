@@ -1,0 +1,4 @@
+0|L0|R0
+me|its a good day
+great|so great
+*
