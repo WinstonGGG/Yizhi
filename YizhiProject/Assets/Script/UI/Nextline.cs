@@ -10,12 +10,14 @@ public class Nextline : MonoBehaviour
     {
         if (!sm.GetComponent<ScriptManager>().needJump)
             sm.GetComponent<ScriptManager>().playNextLine();
-        else
+        else {
+            print("jump");
             sm.GetComponent<ScriptManager>().playCertainScript(-1, -1);
+        }
     }
     public void playOption(int option) {
         EffectManager emComponent = em.GetComponent<EffectManager>();
-        sm.GetComponent<ScriptManager>().playCertainScript(-1, emComponent.jumpLine[option]);
+        sm.GetComponent<ScriptManager>().playCertainScript(-1, emComponent.jumpLine[option-1]);
         emComponent.options.SetActive(false);
         emComponent.button.SetActive(true);
     }

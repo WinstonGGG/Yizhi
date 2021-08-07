@@ -53,7 +53,7 @@ public class EffectManager : MonoBehaviour
             options.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = optionStr[i];
         }
         for (int i = 0; i < jumps.Length; i++) {
-            jumpLine[i] = Convert.ToInt32(jumps[i]) + currentLine + 1;
+            jumpLine[i] = Convert.ToInt32(jumps[i]) + currentLine;
         }
     }
 }

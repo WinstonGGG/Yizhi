@@ -66,15 +66,15 @@ public class ScriptManager : MonoBehaviour
             if (currentLine < textScript.GetLength(curScirpt) - 1)
             {
                 string[] line;
-                try
-                {
+                // try
+                // {
                     line = textScript[curScirpt, currentLine].Split('|');
                     readLine(line);
-                }
-                catch
-                {
-                    Debug.Log("第" + currentLine.ToString() + "行出错，跳过该行");
-                }
+                // }
+                // catch
+                // {
+                //     Debug.Log("第" + currentLine.ToString() + "行出错，跳过该行");
+                // }
             }
 
             if (textScript[curScirpt, currentLine + 1] == null)
@@ -117,9 +117,9 @@ public class ScriptManager : MonoBehaviour
                         case "背景":
                             setBackGround(Convert.ToInt32(effect[1]));
                             break;
-                        case "立绘":
-                            setCharacter(effect[1]);
-                            break;
+                        // case "立绘":
+                        //     setCharacter(effect[1]);
+                        //     break;
                         case "答案跳到":
                             jumpOutOfAnswer(effect[1]);
                             break;
@@ -197,6 +197,7 @@ public class ScriptManager : MonoBehaviour
 
     private void jumpOutOfAnswer(string line) {
         needJump = true;
-        jumpTo = currentLine + Convert.ToInt32(line) + 1;
+        jumpTo = currentLine + Convert.ToInt32(line);
+        Debug.Log("jump tp: " + jumpTo);
     }
 }
