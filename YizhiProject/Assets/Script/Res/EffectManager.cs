@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
 public class EffectManager : MonoBehaviour
 {
-    public GameObject background, leftChar, rightChar, chatBox, title, content;
+    public GameObject background, leftChar, rightChar, chatBox, title, content, options, button;
     public GameObject resourceLoader;
 
-
+    public int[] jumpLine = new int[4];
 
     public void setTitle(string txt)
     {
@@ -42,5 +43,17 @@ public class EffectManager : MonoBehaviour
     public void setChatBoxVisible(bool visible)
     {
         chatBox.SetActive(visible);
+    }
+
+    public void setOption(string[] optionStr, string[] jumps, int currentLine)
+    {
+        options.SetActive(true);
+        button.SetActive(false);
+        for (int i = 0; i < optionStr.Length; i++) {
+            options.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = optionStr[i];
+        }
+        for (int i = 0; i < jumps.Length; i++) {
+            jumpLine[i] = Convert.ToInt32(jumps[i]) + currentLine + 1;
+        }
     }
 }
