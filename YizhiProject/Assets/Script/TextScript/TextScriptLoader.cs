@@ -13,17 +13,7 @@ public class TextScriptLoader : MonoBehaviour
         int fileOrderCounter = 0;
         foreach (TextAsset rawText in textScripts)
         {
-            /*
-            var f = File.ReadAllText("Assets/Resources/TextScript/"+s+".txt", Encoding.Default);
-            try
-            {
-                File.WriteAllText("Assets/Resources/TextScript/"+s+".txt", f, Encoding.UTF8);
-            }
-            catch (Exception)
-            {
-               continue;
-            }
-            */
+        
             
             // Unity load script file template 
             // TextAsset rawText = Resources.Load("TextScript/"+s) as TextAsset;
