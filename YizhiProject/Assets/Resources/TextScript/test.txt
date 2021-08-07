@@ -1,4 +1,4 @@
-0|L0|R0
-me|its a good day
-great|so great
+﻿0|L0|R0
+me|its a good day中文
+great|so great中文
 *
