@@ -117,9 +117,9 @@ public class ScriptManager : MonoBehaviour
                         case "背景":
                             setBackGround(Convert.ToInt32(effect[1]));
                             break;
-                        // case "立绘":
-                        //     setCharacter(effect[1]);
-                        //     break;
+                        case "立绘":
+                            setCharacter(effect[1]);
+                            break;
                         case "答案跳到":
                             jumpOutOfAnswer(effect[1]);
                             break;

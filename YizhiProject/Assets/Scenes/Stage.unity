@@ -1286,7 +1286,10 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 21300000, guid: 9819e4d995575774489393a127ae39ed, type: 3}
   characters:
-  - {fileID: 21300000, guid: 74c2d454e4956654aaaaa22aabe83a14, type: 3}
+  - {fileID: 21300000, guid: b2a9831f863af4c1db8ce3a3bdee108d, type: 3}
+  - {fileID: 21300000, guid: 4e9ecf0f695a84fdc9e70d36fec91c51, type: 3}
+  - {fileID: 21300000, guid: 9a1a7c9a8fd7644d9ada7a70f2cbd7f0, type: 3}
+  - {fileID: 21300000, guid: c50fe3c01b14744a9aa21416c50ba58f, type: 3}
 --- !u!1 &1317234252
 GameObject:
   m_ObjectHideFlags: 0
